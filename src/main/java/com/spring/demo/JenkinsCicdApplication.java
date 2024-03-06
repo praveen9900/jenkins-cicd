@@ -12,6 +12,7 @@ public class JenkinsCicdApplication {
 
 	@GetMapping("/greetings/{name}")
 	public String greeting(@PathVariable String name){
+		name = name.split(" ")[0];
 		return "Hello "+name+"Congratulations you have completed the Jenkins CI CD";
 	}
 
