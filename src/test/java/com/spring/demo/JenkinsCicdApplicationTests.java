@@ -20,7 +20,7 @@ class JenkinsCicdApplicationTests {
 
 		mockMvc.perform(MockMvcRequestBuilders.get("/greetings/{name}",name))
 				.andExpect(MockMvcResultMatchers.status().isOk())
-				.andExpect(MockMvcResultMatchers.content().string("Hello "+name+"Congratulations you have completed the Jenkins CI CD"));
+				.andExpect(MockMvcResultMatchers.content().string("Hello "+name.split(" ")[0]+"Congratulations you have completed the Jenkins CI CD"));
 	}
 
 }
