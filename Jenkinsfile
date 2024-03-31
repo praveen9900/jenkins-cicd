@@ -10,7 +10,7 @@ pipeline{
                DOCKER_USER= "praveen990"
                IMAGE_NAME= "${DOCKER_USER}"+"/"+"${APP_NAME}"
                IMAGE_TAG= "${RELEASE_NO}-${BUILD_NUMBER}"
-        }
+    }
     stages{
 
         stage("SCM checkout"){
