@@ -39,7 +39,7 @@ pipeline{
             steps{
                withCredentials([string(credentialsId: 'token', variable: 'token')]) {
                     bat "docker login -u praveen990 -p %token%"
-                    bat "docker push ${IMAGE_NAME}:${IMAGE_TAG}""
+                    bat "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
                 }
             }
         }
