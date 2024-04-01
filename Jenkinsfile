@@ -30,7 +30,7 @@ pipeline{
         stage("Build Image"){
             steps{
                 script{
-                    bat 'docker build -t ${IMAGE_NAME}:${IMAGE_TAG} .'
+                    bat "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
                 }
             }
         }
@@ -38,8 +38,8 @@ pipeline{
         stage("Deploy Image to Hub"){
             steps{
                withCredentials([string(credentialsId: 'token', variable: 'token')]) {
-                    bat 'docker login -u praveen990 -p %token%'
-                    bat 'docker push ${IMAGE_NAME}:${IMAGE_TAG}'
+                    bat "docker login -u praveen990 -p %token%"
+                    bat "docker push ${IMAGE_NAME}:${IMAGE_TAG}""
                 }
             }
         }
